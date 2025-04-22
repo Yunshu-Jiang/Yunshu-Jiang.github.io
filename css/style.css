@@ -1,0 +1,62 @@
+/* 暗色背景 */
+body {
+  background-color: #121212;
+  color: #eeeeee;
+  font-family: "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.links a {
+  margin: 10px;
+  display: inline-block;
+  color: #00d1ff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+h1, h2 {
+  color: #ffffff;
+}
+
+.project-gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.project-gallery a {
+  flex: 0 0 auto;
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  transition: transform 0.3s;
+}
+
+.project-gallery a:hover {
+  transform: scale(1.05);
+}
+
+.project-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #888;
+  font-size: 0.9em;
+}
