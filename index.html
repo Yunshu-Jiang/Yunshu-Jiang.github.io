@@ -8,7 +8,7 @@
   <!-- 酸性字体 -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-
+</head>
 <body>
   <!-- 动态背景容器 -->
   <div id="background"></div>
@@ -40,27 +40,30 @@
     </footer>
   </div>
 
-  <!-- VANTA 动态云雾背景初始化 -->
-  <!-- ✅ 只保留一次脚本引入 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+  <!-- ✅ 只保留一次脚本引用 -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
 
-<script>
-  // 等页面完全加载后再运行 VANTA
-  window.addEventListener('load', function () {
-    VANTA.FOG({
-      el: "#background",
-      mouseControls: true,
-      touchControls: true,
-      highlightColor: 0xffccff,
-      midtoneColor: 0xccccff,
-      lowlightColor: 0x8888aa,
-      baseColor: 0x111133,
-      blurFactor: 0.6,
-      speed: 0.8,
-      zoom: 0.9
+  <!-- ✅ 确保初始化延后执行 -->
+  <script>
+    window.addEventListener('load', function () {
+      if (window.VANTA && VANTA.FOG) {
+        VANTA.FOG({
+          el: "#background",
+          mouseControls: true,
+          touchControls: true,
+          highlightColor: 0xffccff,
+          midtoneColor: 0xccccff,
+          lowlightColor: 0x8888aa,
+          baseColor: 0x111133,
+          blurFactor: 0.6,
+          speed: 0.8,
+          zoom: 0.9
+        });
+      } else {
+        console.warn("VANTA or THREE not loaded properly.");
+      }
     });
-  });
-</script>
+  </script>
 </body>
 </html>
