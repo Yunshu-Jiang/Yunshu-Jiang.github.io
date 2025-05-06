@@ -1,99 +1,105 @@
-/* 酸性背景+迷幻配色 */
-body {
+body, html {
   margin: 0;
   padding: 0;
-  background: radial-gradient(ellipse at top left, #0f0c29, #302b63, #24243e);
-  color: #f0f0f0;
   font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  height: 100%;
   overflow-x: hidden;
 }
 
-/* 酸性感标题字体 */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+#background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.content {
+  padding: 40px 20px;
+  position: relative;
+  z-index: 2;
+}
 
 header {
   text-align: center;
-  padding: 40px 20px;
+  margin-bottom: 40px;
 }
 
 header h1 {
-  font-size: 3em;
+  font-size: 3rem;
   color: #ff00cc;
   text-shadow: 2px 2px #00ffff;
 }
 
 header p {
-  margin: 5px 0;
-  color: #cccccc;
+  margin: 6px 0;
 }
 
 .links a {
-  margin: 10px;
-  padding: 10px 15px;
-  background: linear-gradient(45deg, #00ffff, #ff00cc);
-  color: #000;
-  text-decoration: none;
+  background: linear-gradient(45deg, #ff00cc, #00ffff);
+  color: black;
   font-weight: bold;
+  padding: 10px 15px;
+  margin: 10px;
+  text-decoration: none;
   border-radius: 8px;
-  transition: transform 0.2s;
+  transition: 0.3s;
 }
 
 .links a:hover {
-  transform: scale(1.05) rotate(1deg);
+  transform: scale(1.05);
+  filter: brightness(120%);
 }
 
 main {
-  padding: 20px;
   text-align: center;
 }
 
 main h2 {
-  font-size: 2em;
-  color: #ff00cc;
+  font-size: 2rem;
   margin-bottom: 30px;
+  color: #ffeeff;
+  text-shadow: 1px 1px #00ffff;
 }
 
-/* 图片滚动容器 */
 .project-gallery {
   display: flex;
+  flex-wrap: nowrap;
   overflow-x: auto;
   gap: 20px;
-  padding: 10px 20px;
-  scroll-behavior: smooth;
+  padding-bottom: 20px;
+  justify-content: center;
 }
 
-/* 每个图片卡片 */
 .project-gallery a {
   flex: 0 0 auto;
-  width: 300px;
-  height: 200px;
-  border-radius: 15px;
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
   overflow: hidden;
-  position: relative;
-  box-shadow: 0 0 20px #00ffff80;
+  box-shadow: 0 0 15px #ff00cc88;
   transition: transform 0.3s;
 }
 
 .project-gallery a:hover {
-  transform: scale(1.08) rotate(-1deg);
+  transform: scale(1.08);
 }
 
-/* 关键点：让图片铺满容器 */
 .project-gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: hue-rotate(30deg) contrast(120%) saturate(150%);
-  transition: 0.3s ease;
+  filter: hue-rotate(60deg) contrast(130%) saturate(160%);
+  transition: 0.3s;
 }
 
 .project-gallery a:hover img {
-  filter: hue-rotate(90deg) contrast(150%) saturate(200%);
+  filter: hue-rotate(180deg);
 }
 
 footer {
   text-align: center;
-  padding: 30px;
-  color: #999;
-  font-size: 0.9em;
+  margin-top: 50px;
+  color: #cccccc;
+  font-size: 0.9rem;
 }
