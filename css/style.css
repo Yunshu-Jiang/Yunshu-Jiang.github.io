@@ -1,19 +1,22 @@
-/* 酸性设计 + 迷幻动态背景 + 幻彩风格 */
+/* 酸性风格字体 + 明亮白色文字 + 修复背景影响图片 */
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Major+Mono+Display&display=swap');
 
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Orbitron', 'Major Mono Display', monospace;
   color: #ffffff;
   height: 100%;
   overflow-x: hidden;
+  background-color: #0d0d1a;
 }
 
 #background {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -999; /* 最底层 */
+  z-index: -999;
   width: 100%;
   height: 100%;
 }
@@ -31,12 +34,13 @@ header {
 
 header h1 {
   font-size: 3rem;
-  color: #ff00cc;
+  color: #ffffff;
   text-shadow: 2px 2px #00ffff;
 }
 
 header p {
   margin: 6px 0;
+  color: #ffffff;
 }
 
 .links a {
@@ -64,7 +68,7 @@ main {
 main h2 {
   font-size: 2rem;
   margin-bottom: 30px;
-  color: #ffeeff;
+  color: #ffffff;
   text-shadow: 1px 1px #00ffff;
 }
 
@@ -95,12 +99,8 @@ main h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: hue-rotate(60deg) contrast(130%) saturate(160%);
-  transition: 0.3s;
-}
-
-.project-gallery a:hover img {
-  filter: hue-rotate(180deg);
+  transition: transform 0.3s;
+  /* 移除了滤镜，防止颜色变调 */
 }
 
 footer {
