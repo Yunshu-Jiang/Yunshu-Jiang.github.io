@@ -1,15 +1,13 @@
-/* 酸性风格字体 + 明亮白色文字 + 修复背景影响图片 */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Major+Mono+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 body, html {
   margin: 0;
   padding: 0;
-  font-family: 'Orbitron', 'Major Mono Display', monospace;
+  font-family: 'Orbitron', sans-serif;
   color: #ffffff;
   height: 100%;
-  overflow-x: hidden;
   background-color: #0d0d1a;
+  overflow-x: hidden;
 }
 
 #background {
@@ -22,6 +20,8 @@ body, html {
 }
 
 .content {
+  max-width: 1100px;
+  margin: 0 auto;
   padding: 40px 20px;
   position: relative;
   z-index: 2;
@@ -33,14 +33,13 @@ header {
 }
 
 header h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #ffffff;
   text-shadow: 2px 2px #00ffff;
 }
 
 header p {
   margin: 6px 0;
-  color: #ffffff;
 }
 
 .links a {
@@ -66,7 +65,7 @@ main {
 }
 
 main h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 30px;
   color: #ffffff;
   text-shadow: 1px 1px #00ffff;
@@ -100,7 +99,6 @@ main h2 {
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s;
-  /* 移除了滤镜，防止颜色变调 */
 }
 
 footer {
