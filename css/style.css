@@ -1,62 +1,99 @@
-/* 暗色背景 */
+/* 酸性背景+迷幻配色 */
 body {
-  background-color: #121212;
-  color: #eeeeee;
-  font-family: "Helvetica Neue", sans-serif;
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  background: radial-gradient(ellipse at top left, #0f0c29, #302b63, #24243e);
+  color: #f0f0f0;
+  font-family: 'Orbitron', sans-serif;
+  overflow-x: hidden;
 }
+
+/* 酸性感标题字体 */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
 header {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 40px 20px;
+}
+
+header h1 {
+  font-size: 3em;
+  color: #ff00cc;
+  text-shadow: 2px 2px #00ffff;
+}
+
+header p {
+  margin: 5px 0;
+  color: #cccccc;
 }
 
 .links a {
   margin: 10px;
-  display: inline-block;
-  color: #00d1ff;
+  padding: 10px 15px;
+  background: linear-gradient(45deg, #00ffff, #ff00cc);
+  color: #000;
   text-decoration: none;
   font-weight: bold;
+  border-radius: 8px;
+  transition: transform 0.2s;
 }
 
 .links a:hover {
-  text-decoration: underline;
+  transform: scale(1.05) rotate(1deg);
 }
 
-h1, h2 {
-  color: #ffffff;
+main {
+  padding: 20px;
+  text-align: center;
 }
 
+main h2 {
+  font-size: 2em;
+  color: #ff00cc;
+  margin-bottom: 30px;
+}
+
+/* 图片滚动容器 */
 .project-gallery {
   display: flex;
   overflow-x: auto;
   gap: 20px;
-  padding: 10px 0;
+  padding: 10px 20px;
+  scroll-behavior: smooth;
 }
 
+/* 每个图片卡片 */
 .project-gallery a {
   flex: 0 0 auto;
   width: 300px;
-  border-radius: 10px;
+  height: 200px;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  position: relative;
+  box-shadow: 0 0 20px #00ffff80;
   transition: transform 0.3s;
 }
 
 .project-gallery a:hover {
-  transform: scale(1.05);
+  transform: scale(1.08) rotate(-1deg);
 }
 
+/* 关键点：让图片铺满容器 */
 .project-gallery img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
+  filter: hue-rotate(30deg) contrast(120%) saturate(150%);
+  transition: 0.3s ease;
+}
+
+.project-gallery a:hover img {
+  filter: hue-rotate(90deg) contrast(150%) saturate(200%);
 }
 
 footer {
   text-align: center;
-  margin-top: 40px;
-  color: #888;
+  padding: 30px;
+  color: #999;
   font-size: 0.9em;
 }
